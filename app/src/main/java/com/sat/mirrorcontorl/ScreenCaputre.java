@@ -193,4 +193,54 @@ public class ScreenCaputre {
             }
         }
     }
+//客户端发送pps和sps
+//    // Log.i(TAG,
+//    // "hdb----b0:"+bb.get(0)+"b1:"+bb.get(1)+"b2:"+bb.get(2)+"b3:"+bb.get(3)+"b4:"+bb.get(4));
+//    int offset = 4;
+//    // 判断帧的类型
+//		if (bb.get(2) == 0x01) {
+//        offset = 3;
+//    }
+//    int type = bb.get(offset) & 0x1f;
+//		if (type == NAL_SPS || type == NAL_PPS) {
+//        // [0, 0, 0, 1, 103, 66, -64, 13, -38, 5, -126, 90, 1, -31, 16,
+//        // -115, 64, 0, 0, 0, 1, 104, -50, 6, -30]
+//        // 打印发现这里将 SPS帧和 PPS帧合在了一起发送
+//        // SPS为 [4，len-8]
+//        // PPS为后4个字节
+//        int length = bb.capacity();
+////			byte[] pps = new byte[8];
+//        byte[] sps = new byte[length];
+//        // bb.getInt();// 抛弃 0,0,0,1
+//        bb.get(sps, 0, length);
+//        if (null != screenCaputreListener) {
+//            screenCaputreListener.onImageData(sps);
+//        }
+//        // bb.getInt();
+////			bb.get(pps, 0, pps.length);
+////			Log.d(TAG,
+////					"解析得到 sps:" + Arrays.toString(sps) + ",PPS="
+////							+ Arrays.toString(pps));
+//
+//        // hdb ---
+////			pps = null;
+////			sps = null;
+////			if (vBufferInfo.size > 22) {
+////				final byte[] bytes = new byte[vBufferInfo.size - 22];
+////				bb.get(bytes, 0, bytes.length);
+////				Log.i(TAG, "hdb---bytes:" + Arrays.toString(bytes));
+////				if (null != screenCaputreListener) {
+////					screenCaputreListener.onImageData(bytes);
+////				}
+////			}
+//
+//        // hdb ---
+//
+//    } else if (type == NAL_SLICE || type == NAL_SLICE_IDR) {
+//        final byte[] bytes = new byte[vBufferInfo.size];
+//        bb.get(bytes);
+//        if (null != screenCaputreListener) {
+//            screenCaputreListener.onImageData(bytes);
+//        }
+//    }
 }
